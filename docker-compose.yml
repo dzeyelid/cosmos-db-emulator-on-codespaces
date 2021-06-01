@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: ./.devcontainer/functions/Dockerfile
       args:
-        VARIANT: 16
+        VARIANT: 14
     image: functions
     ports:
       - "80:80"
