@@ -1,0 +1,39 @@
+version: '3'
+services:
+  functions:
+    build:
+      context: .
+      dockerfile: ./.devcontainer/functions/Dockerfile
+      args:
+        VARIANT: 16
+    image: functions
+    ports:
+      - "80:80"
+    networks:
+      - frontend
+      - backend
+    environment:
+      AZURE_COSMOS_EMULATOR_IP_ADDRESS_OVERRIDE: cosmos-db-emulator
+  
+  cosmos-db-emulator:
+    image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator
+    ports: 
+      - "8081:8081"
+      - "10251:10251"
+      - "10252:10252"
+      - "10253:10253"
+      - "10254:10254"
+    environment:
+      AZURE_COSMOS_EMULATOR_PARTITION_COUNT: 10
+      AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE: "true"
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 3g
+    networks: 
+      - backend
+
+networks:
+  frontend:
+  backend:
