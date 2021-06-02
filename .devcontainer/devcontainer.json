@@ -4,7 +4,7 @@
 	"name": "Node.js & TypeScript with Cosmos DB Emulator on Linux",
 	"dockerComposeFile": ["../docker-compose.yml", "docker-compose.devcontainer.yml"],
 	"service": "functions",
-	"workspaceFolder": "/workspace",
+	"workspaceFolder": "/workspace/src/functions",
 	"shutdownAction": "stopCompose",
 
 	// Set *default* container specific settings.json values on container create.
@@ -31,8 +31,7 @@
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node",
 	"forwardPorts": [
-		80,
-		443,
+		7071,
 		8081
 	]
 }

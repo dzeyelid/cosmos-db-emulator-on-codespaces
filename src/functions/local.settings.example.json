@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_EXTENSION_VERSION": "~3",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "WEBSITE_NODE_DEFAULT_VERSION": "~14",
+    "COSMOSDB_ENDPOINT": "https://cosmos-db-emulator:8081",
+    "COSMOSDB_KEY": "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==",
+    "COSMOSDB_DATABASE": "Items",
+    "COSMOSDB_CONTAINER": "messages",
+    "COSMOSDB_PARTITION_KEY": "/user/id"
+  }
+}

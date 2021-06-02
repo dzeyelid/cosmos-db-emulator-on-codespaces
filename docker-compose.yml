@@ -8,13 +8,15 @@ services:
         VARIANT: 14
     image: functions
     ports:
-      - "80:80"
+      - "7071:7071"
+    environment:
+      NODE_TLS_REJECT_UNAUTHORIZED: 0
     networks:
       - frontend
       - backend
-    environment:
-      AZURE_COSMOS_EMULATOR_IP_ADDRESS_OVERRIDE: cosmos-db-emulator
-  
+    depends_on:
+      - cosmos-db-emulator
+
   cosmos-db-emulator:
     image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator
     ports: 
@@ -26,11 +28,13 @@ services:
     environment:
       AZURE_COSMOS_EMULATOR_PARTITION_COUNT: 10
       AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE: "true"
-    deploy:
-      resources:
-        limits:
-          cpus: '2.0'
-          memory: 3g
+      # AZURE_COSMOS_EMULATOR_IP_ADDRESS_OVERRIDE: # Direct mode を利用する場合に必要
+    # # 現状の Codespaces では適用されない
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '2.0'
+    #       memory: 3g
     networks: 
       - backend
 
