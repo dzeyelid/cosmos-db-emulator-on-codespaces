@@ -22,10 +22,10 @@ Post a request body with a construct like the following to the function endpoint
 
 ```json
 {
-	"user": {
-		"id": "dz"
-	},
-	"message": "Hooray!"
+  "user": {
+    "id": "dz"
+  },
+  "message": "Hooray!"
 }
 ```
 
