@@ -4,6 +4,35 @@ This is an example of an environment to develop Azure Functions with Cosmos DB E
 
 You can set up the environment on GitHub Codespaces easily by forking this repository and using it.
 
+## How to run the example code
+
+When you open this environment on GitHub Codespaces, you will logged in the `functions` container instance.
+
+Execute commands below, you can run the Azure Functions locally (on GitHub Codespaces).
+
+```bash
+cd src/functions
+cp local.settings.example.json local.settings.jspn
+npm run start
+```
+
+Now, you can access to `http://<generated endpoint by GitHub Codespaces>:7071/api/write`. (If you open GitHub Codespaces on Visual Studio Code on your local machine, replace the endpoint to `localhost`.)
+
+Post a request body with a construct like the following to the function endpoint `/api/write`.
+
+```json
+{
+	"user": {
+		"id": "dz"
+	},
+	"message": "Hooray!"
+}
+```
+
+Then open Cosmos DB emulator with `http://<generated endpoint by GitHub Codespaces or localhost>:8081/_explorer/index.html`, and you can see the data under `Items` database > `messages` container on the Cosmos DB emulator.
+
+Also, you can start debugging by pressing `F5` button such as Visual Studio Code.
+
 ## How it works
 
 There are 2 container instances in this environment.
