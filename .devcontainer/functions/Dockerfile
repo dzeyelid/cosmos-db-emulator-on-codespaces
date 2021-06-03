@@ -25,7 +25,9 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > mic
 # RUN su node -c "npm install -g <your-package-list -here>"
 
 RUN npm install -g npm
-RUN npm install -g @azure/static-web-apps-cli
+RUN npm install -g \
+  @azure/static-web-apps-cli \
+  eslint
 
 EXPOSE 80
 EXPOSE 443
