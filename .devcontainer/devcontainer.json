@@ -4,7 +4,6 @@
 	"name": "Node.js & TypeScript with Cosmos DB Emulator on Linux",
 	"dockerComposeFile": ["../docker-compose.yml", "docker-compose.devcontainer.yml"],
 	"service": "functions",
-	"workspaceFolder": "/workspace/src/functions",
 	"shutdownAction": "stopCompose",
 
 	// Set *default* container specific settings.json values on container create.
