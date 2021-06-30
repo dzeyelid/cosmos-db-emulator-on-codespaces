@@ -12,7 +12,8 @@ Execute commands below, you can run the Azure Functions locally (on GitHub Codes
 
 ```bash
 cd src/functions
-cp local.settings.example.json local.settings.jspn
+cp local.settings.example.json local.settings.json
+npm install
 npm run start
 ```
 
